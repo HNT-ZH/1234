@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="height: 10000px;">
+	<script type="text/javascript" src="js/bindEvent.js"></script>
+	<script type="text/javascript">
+	// 为document绑定onscroll事件
+	// document.onscroll = function() {
+		// console.log('onscroll');
+	// }
+
+
+	// 为document绑定onmousewheel事件
+	// document.onmousewheel = function() {
+	// 	console.log('onmousewheel');
+	// }
+
+
+	// 火狐中的事件
+	// document.addEventListener('DOMMouseScroll', function() {
+	// 	console.log('火狐中');
+	// })
+
+
+	// 现在的问题是: 鼠标滚轮事件在chrome中  和在火狐中支持的方式不一致，
+	// 我们希望有一种方式可以统一浏览器的绑定方式
+	
+	// 统一方式
+	bindEvent(document, 'mousewheel', function(e) {
+		console.log('事件执行了');
+
+		// 兼容IE
+		var e = e || window.event;
+
+		// 阻止默认事件
+		if (e.preventDefault) {
+			e.preventDefault();
+ 		} else {
+ 			return false;
+ 		}
+	})
+
+	</script>
+</body>
+</html>
