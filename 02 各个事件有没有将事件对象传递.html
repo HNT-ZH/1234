@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 为document绑定点击事件
+	document.onclick = function(e) {
+		console.log(e);
+	}
+
+	// DOM2级事件
+	// document.addEventListener('click', function(e) {
+	// 	console.log(e);
+	// })
+
+
+	// attachEvent
+	document.attachEvent('onclick', function(e) {
+		console.log(e);
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 为document绑定mousewheel事件
+	document.onmousewheel = function(e) {
+		// 兼容IE
+
+		var e = e || window.event;
+		// console.log(e);
+		// 指示鼠标滚轮方向的属性: e.wheelDelta
+		console.log(e.wheelDelta);
+	}
+
+
+	// 火狐中的事件
+	document.addEventListener('DOMMouseScroll', function(e) {
+		// console.log(e);
+		// 在火狐中指示滚轮方向的属性: e.detail
+
+		console.log(e.detail);
+	})
+	</script>
+</body>
+</html>
